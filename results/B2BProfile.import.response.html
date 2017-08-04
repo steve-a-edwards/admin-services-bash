@@ -1,0 +1,282 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+			table, th, td {border: 1px solid black;}
+			th, td {padding: 3px;}
+			.css_highlight { background: pink; }
+			.css_normal { background: white; }
+			</style>
+</head>
+<body>
+<h2>DataPower Export / Import Utility</h2>
+			
+			This DataPower-based utility allows the export from a source DataPower and domain to a target DataPower and domain.<p></p>
+			The utility makes an XMI / SOMA call to the source, and subsequently makes an XMI / SOMA call to the target.
+			
+			<h3>Details</h3>
+<table border="1">
+<tr>
+<td>Exported from host: </td>
+<td>source-datapower</td>
+</tr>
+<tr>
+<td>Exported device name: </td>
+<td>docker-macair-admin-services</td>
+</tr>
+<tr>
+<td>Exported from domain: </td>
+<td>XB60-B2B-Tutorial</td>
+</tr>
+<tr>
+<td>Imported to host: </td>
+<td>target-datapower<br>
+</td>
+</tr>
+<tr>
+<td>Imported to domain: </td>
+<td>XB60-B2B-Target<br>
+</td>
+</tr>
+</table>
+<br>
+			Any highlighted cells below indicate either:
+			<ul>
+<li>Password Alias objects may need to have password set</li>
+<li>Key or Certificate files may need to be uploaded</li>
+</ul>
+			since the import process does not cater for these.
+			<p></p>
+<hr>
+<h3>Export File: Object Content / Object Import Results</h3>
+<table border="1">
+<tr>
+<th colspan="2">Export Content</th>
+<th colspan="2">Import Intent</th>
+<th colspan="2">Import Target</th>
+</tr>
+<tr>
+<th>class</th>
+<th>name</th>
+<th>import-debug</th>
+<th>overwrite</th>
+<th>Exists in target</th>
+<th>Import result</th>
+</tr>
+<tr>
+<td class="css_normal">SMTPServerConnection</td>
+<td class="css_normal"><i>default</i></td>
+<td>false</td>
+<td>on</td>
+<td>exists</td>
+<td>SUCCESS</td>
+</tr>
+<tr>
+<td class="css_highlight">CryptoCertificate</td>
+<td class="css_highlight"><i>hubowner</i></td>
+<td>false</td>
+<td>on</td>
+<td>exists</td>
+<td>SUCCESS</td>
+</tr>
+<tr>
+<td class="css_normal">CryptoValCred</td>
+<td class="css_normal"><i>HubOwner_Sigval</i></td>
+<td>false</td>
+<td>on</td>
+<td>exists</td>
+<td>SUCCESS</td>
+</tr>
+<tr>
+<td class="css_normal">B2BProfile</td>
+<td class="css_normal"><i>HubOwner_Ext</i></td>
+<td>false</td>
+<td>on</td>
+<td>exists</td>
+<td>SUCCESS</td>
+</tr>
+<tr>
+<td class="css_normal">DomainSettings</td>
+<td class="css_normal"><i>default</i></td>
+<td>false</td>
+<td>on</td>
+<td>exists</td>
+<td>SUCCESS</td>
+</tr>
+<tr>
+<td class="css_highlight">PasswordAlias</td>
+<td class="css_highlight"><i>datapower</i></td>
+<td>false</td>
+<td>on</td>
+<td>exists</td>
+<td>SUCCESS</td>
+</tr>
+<tr>
+<td class="css_highlight">CryptoKey</td>
+<td class="css_highlight"><i>hubowner</i></td>
+<td>false</td>
+<td>on</td>
+<td>exists</td>
+<td>SUCCESS</td>
+</tr>
+<tr>
+<td class="css_normal">CryptoIdentCred</td>
+<td class="css_normal"><i>HubOwner_Decr</i></td>
+<td>false</td>
+<td>on</td>
+<td>exists</td>
+<td>SUCCESS</td>
+</tr>
+<tr>
+<td class="css_normal">CryptoIdentCred</td>
+<td class="css_normal"><i>HubOwner_Sig</i></td>
+<td>false</td>
+<td>on</td>
+<td>exists</td>
+<td>SUCCESS</td>
+</tr>
+<tr>
+<td class="css_normal">B2BProfile</td>
+<td class="css_normal"><i>HubOwner_Int</i></td>
+<td>false</td>
+<td>on</td>
+<td>exists</td>
+<td>SUCCESS</td>
+</tr>
+<tr>
+<td class="css_highlight">CryptoCertificate</td>
+<td class="css_highlight"><i>partner</i></td>
+<td>false</td>
+<td>on</td>
+<td>exists</td>
+<td>SUCCESS</td>
+</tr>
+<tr>
+<td class="css_normal">CryptoValCred</td>
+<td class="css_normal"><i>Partner_Sigval</i></td>
+<td>false</td>
+<td>on</td>
+<td>exists</td>
+<td>SUCCESS</td>
+</tr>
+<tr>
+<td class="css_normal">B2BProfile</td>
+<td class="css_normal"><i>Partner_Ext</i></td>
+<td>false</td>
+<td>on</td>
+<td>exists</td>
+<td>SUCCESS</td>
+</tr>
+<tr>
+<td class="css_highlight">CryptoKey</td>
+<td class="css_highlight"><i>partner</i></td>
+<td>false</td>
+<td>on</td>
+<td>exists</td>
+<td>SUCCESS</td>
+</tr>
+<tr>
+<td class="css_normal">CryptoIdentCred</td>
+<td class="css_normal"><i>Partner_Decr</i></td>
+<td>false</td>
+<td>on</td>
+<td>exists</td>
+<td>SUCCESS</td>
+</tr>
+<tr>
+<td class="css_normal">CryptoIdentCred</td>
+<td class="css_normal"><i>Partner_Sig</i></td>
+<td>false</td>
+<td>on</td>
+<td>exists</td>
+<td>SUCCESS</td>
+</tr>
+<tr>
+<td class="css_normal">B2BProfile</td>
+<td class="css_normal"><i>Partner_Int</i></td>
+<td>false</td>
+<td>on</td>
+<td>exists</td>
+<td>SUCCESS</td>
+</tr>
+</table>
+<hr>
+<h3>Export File: File Content / File Import Results</h3>
+<table border="1">
+<tr>
+<th>Export Content</th>
+<th>Import Intent</th>
+<th colspan="2">Import Target</th>
+</tr>
+<tr>
+<th>name</th>
+<th>overwrite</th>
+<th>Comparison</th>
+<th>Import result</th>
+</tr>
+<tr>
+<td class="css_highlight">cert:///hubowner-sscert.pem</td>
+<td>on</td>
+<td class="css_highlight">missing-key</td>
+<td></td>
+</tr>
+<tr>
+<td class="css_highlight">cert:///hubowner-privkey.pem</td>
+<td>on</td>
+<td class="css_highlight">missing-key</td>
+<td></td>
+</tr>
+<tr>
+<td class="css_highlight">cert:///partner-sscert.pem</td>
+<td>on</td>
+<td class="css_highlight">missing-key</td>
+<td></td>
+</tr>
+<tr>
+<td class="css_highlight">cert:///partner-privkey.pem</td>
+<td>on</td>
+<td class="css_highlight">missing-key</td>
+<td></td>
+</tr>
+<tr>
+<td class="css_normal">webgui:///clixform.xsl</td>
+<td>on</td>
+<td class="css_normal">internal</td>
+<td></td>
+</tr>
+<tr>
+<td class="css_normal">webgui:///SchemaUtil.xsl</td>
+<td>on</td>
+<td class="css_normal">internal</td>
+<td></td>
+</tr>
+<tr>
+<td class="css_normal">webgui:///management.xsl</td>
+<td>on</td>
+<td class="css_normal">internal</td>
+<td></td>
+</tr>
+<tr>
+<td class="css_normal">webgui:///map-dmz.xsl</td>
+<td>on</td>
+<td class="css_normal">internal</td>
+<td></td>
+</tr>
+<tr>
+<td class="css_normal">webgui:///drMgmt.xml</td>
+<td>on</td>
+<td class="css_normal">internal</td>
+<td></td>
+</tr>
+<tr>
+<td class="css_normal">webgui:///basetypes.xml</td>
+<td>on</td>
+<td class="css_normal">internal</td>
+<td></td>
+</tr>
+</table>
+<hr>
+			Imported date: 2017-08-04
+			at: 09:50:40 EDT<p></p>
+</body>
+</html>
