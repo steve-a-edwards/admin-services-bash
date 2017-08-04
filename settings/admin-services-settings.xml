@@ -1,0 +1,24 @@
+<admin-services-settings>
+
+	<!--
+        Following used by B2B_Synchronizer_MPGW to synchronize B2B objects between different DataPowers -->
+	<B2B-Synchronization>
+	
+        <!-- XMI interfaces and domains -->
+		<source-datapower soma_host_port="source-datapower:5550"
+			domain="XB60-B2B-Tutorial" />
+		<target-datapower soma_host_port="target-datapower:5550"
+			domain="XB60-B2B-Target" />
+	</B2B-Synchronization>
+	<!--
+        These will be used to set the passwords of the PasswordAlias objects in the above target-datapower and domain.
+        There may be many of these. -->
+	<PasswordAlias-Set>
+		<PasswordAlias name="datapower">
+			<Password>datapower</Password>
+		</PasswordAlias>
+		<PasswordAlias name="zdatapower">
+			<Password>zdatapower</Password>
+		</PasswordAlias>
+	</PasswordAlias-Set>
+</admin-services-settings>
