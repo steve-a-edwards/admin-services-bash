@@ -113,3 +113,26 @@ curl -d @$xmi_password_aliases_request\
 
 echo "******** Received xmi_password_aliases_response to file: $xmi_password_aliases_response"
 
+# ======== Produce an XMI request for resetting target domain
+export xmi_reset_domain_request=$working/reset.domain.request.xml
+export reset_domain_file=$xsl/do-action-RestartDomain_template.xsl
+ 
+ xsltproc $xsltproc_switch\
+ -stringparam x_param_target_domain $x_param_target_domain \
+ $reset_domain_file $null_xml >$xmi_reset_domain_request
+ 
+ echo "******** Produced xmi_reset_domain_request file: $xmi_reset_domain_request"
+ 
+# ======== Call XMI to reset domain on target DataPower
+export xmi_reset_domain_response=$results/reset.domain.response.xml
+
+curl -d @$xmi_reset_domain_request\
+ https://$x_param_target_soma_host/service/mgmt/amp/3.0\
+ -k -u$xmi_user:$xmi_pwrd\
+  >$xmi_reset_domain_response
+
+echo "******** Received xmi_reset_domain_response to file: $xmi_reset_domain_response"
+
+ 
+
+

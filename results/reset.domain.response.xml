@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+	<env:Body>
+		<amp:RestartDomainResponse
+			xmlns:amp="http://www.datapower.com/schemas/appliance/management/3.0">
+			<amp:Status>ok</amp:Status>
+		</amp:RestartDomainResponse>
+	</env:Body>
+</env:Envelope>
