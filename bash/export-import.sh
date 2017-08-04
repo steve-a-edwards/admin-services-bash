@@ -1,6 +1,7 @@
-export project_location=/Users/steve/Applications/eclipse/workspace-sse/export-import
+export project_location=/Users/steve/Applications/eclipse/workspace-sse/admin-services-bash
 
 # cd $project_location/bash
+# ./export-import.sh
 
 export working=$project_location/bash/working
 echo "******** Working folder for temporary files produced by this script: $working"
