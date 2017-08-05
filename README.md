@@ -14,3 +14,6 @@ Sample DataPower CLI scripts to demonstrate transferring files (e.g. keys and ce
 from an external server to a DataPower domain.
 
 Author: Steve Edwards, IBM DataPower Specialist (2017-08-05)
+<hr/>
+Sample HTML output from import:<br/>
+http://htmlpreview.github.io/?https://raw.githubusercontent.com/steve-a-edwards/admin-services-bash/master/results/B2BGateway.import.response.html
