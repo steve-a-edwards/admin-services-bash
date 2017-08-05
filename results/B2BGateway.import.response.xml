@@ -1,2 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"><env:Body><dp:response xmlns:dp="http://www.datapower.com/schemas/management"><dp:timestamp>2017-08-04T12:33:13-04:00</dp:timestamp><dp:import><import-results domain="XB60-B2B-Target"><export-details><description>Exported Configuration</description><user>xmi-user</user><domain>XB60-B2B-Tutorial</domain><comment/><product-id>software</product-id><product>IDG</product><display-product>IDG</display-product><model>IBM DataPower Gateway</model><display-model>IBM DataPower Gateway</display-model><device-name>docker-macair-admin-services</device-name><serial-number>0000001</serial-number><firmware-version>IDG.7.5.2.4</firmware-version><display-firmware-version>IDG.7.5.2.4</display-firmware-version><firmware-build>285920</firmware-build><firmware-timestamp>2017/03/28 20:57:26</firmware-timestamp><current-date>2017-08-04</current-date><current-time>12:33:10 EDT</current-time><reset-date>2017-08-03</reset-date><reset-time>19:18:01 EDT</reset-time><login-message/><custom-ui-file/></export-details><imported-files><file name="cert:///hubowner-privkey.pem" src="cert/hubowner-privkey.pem" status="missing-key" overwrite="on"/><file name="cert:///hubowner-sscert.pem" src="cert/hubowner-sscert.pem" status="missing-key" overwrite="on"/><file name="cert:///partner-sscert.pem" src="cert/partner-sscert.pem" status="missing-key" overwrite="on"/><file name="store:///b2b-routing.xsl" src="store/b2b-routing.xsl" status="same" overwrite="on"/><file name="cert:///partner-privkey.pem" src="cert/partner-privkey.pem" status="missing-key" overwrite="on"/><file name="webgui:///clixform.xsl" src="dp-aux/clixform.xsl" status="internal" overwrite="on"/><file name="webgui:///SchemaUtil.xsl" src="dp-aux/SchemaUtil.xsl" status="internal" overwrite="on"/><file name="webgui:///management.xsl" src="dp-aux/management.xsl" status="internal" overwrite="on"/><file name="webgui:///map-dmz.xsl" src="dp-aux/map-dmz.xsl" status="internal" overwrite="on"/><file name="webgui:///drMgmt.xml" src="dp-aux/drMgmt.xml" status="internal" overwrite="on"/><file name="webgui:///basetypes.xml" src="dp-aux/basetypes.xml" status="internal" overwrite="on"/></imported-files><imported-objects><object class="AS2SourceProtocolHandler" name="HubOwner_AS2" status="exists" import-debug="false" overwrite="on"/><object class="HTTPSourceProtocolHandler" name="HubOwner_http" status="exists" import-debug="false" overwrite="on"/><object class="SMTPServerConnection" name="default" status="exists" import-debug="false" overwrite="on"/><object class="DomainSettings" name="default" status="exists" import-debug="false" overwrite="on"/><object class="PasswordAlias" name="datapower" status="exists" import-debug="false" overwrite="on"/><object class="CryptoKey" name="hubowner" status="exists" import-debug="false" overwrite="on"/><object class="CryptoCertificate" name="hubowner" status="exists" import-debug="false" overwrite="on"/><object class="CryptoIdentCred" name="HubOwner_Decr" status="exists" import-debug="false" overwrite="on"/><object class="CryptoIdentCred" name="HubOwner_Sig" status="exists" import-debug="false" overwrite="on"/><object class="B2BProfile" name="HubOwner_Int" status="exists" import-debug="false" overwrite="on"/><object class="CryptoCertificate" name="partner" status="exists" import-debug="false" overwrite="on"/><object class="CryptoValCred" name="Partner_Sigval" status="exists" import-debug="false" overwrite="on"/><object class="B2BProfile" name="Partner_Ext" status="exists" import-debug="false" overwrite="on"/><object class="B2BXPathRoutingPolicy" name="CustomXML" status="exists" import-debug="false" overwrite="on"/><object class="HTTPUserAgent" name="default" status="exists" import-debug="false" overwrite="on"/><object class="XMLManager" name="default" status="exists" import-debug="false" overwrite="on"/><object class="B2BGateway" name="HubOwner" status="exists" import-debug="false" overwrite="on"/><object class="AS2SourceProtocolHandler" name="Partner_AS2" status="exists" import-debug="false" overwrite="on"/><object class="HTTPSourceProtocolHandler" name="Partner_http" status="exists" import-debug="false" overwrite="on"/><object class="CryptoValCred" name="HubOwner_Sigval" status="exists" import-debug="false" overwrite="on"/><object class="B2BProfile" name="HubOwner_Ext" status="exists" import-debug="false" overwrite="on"/><object class="CryptoKey" name="partner" status="exists" import-debug="false" overwrite="on"/><object class="CryptoIdentCred" name="Partner_Decr" status="exists" import-debug="false" overwrite="on"/><object class="CryptoIdentCred" name="Partner_Sig" status="exists" import-debug="false" overwrite="on"/><object class="B2BProfile" name="Partner_Int" status="exists" import-debug="false" overwrite="on"/><object class="B2BGateway" name="Partner" status="exists" import-debug="false" overwrite="on"/></imported-objects><file-copy-log><file-result name="store:///b2b-routing.xsl" result="ignored"><reason>Identical file exists</reason></file-result></file-copy-log><exec-script-results><cfg-result class="AS2SourceProtocolHandler" name="HubOwner_AS2" status="SUCCESS"/><cfg-result class="HTTPSourceProtocolHandler" name="HubOwner_http" status="SUCCESS"/><cfg-result class="SMTPServerConnection" name="default" status="SUCCESS"/><cfg-result class="DomainSettings" name="default" status="SUCCESS"/><cfg-result class="PasswordAlias" name="datapower" status="SUCCESS"/><cfg-result class="CryptoKey" name="hubowner" status="SUCCESS"/><cfg-result class="CryptoCertificate" name="hubowner" status="SUCCESS"/><cfg-result class="CryptoIdentCred" name="HubOwner_Decr" status="SUCCESS"/><cfg-result class="CryptoIdentCred" name="HubOwner_Sig" status="SUCCESS"/><cfg-result class="B2BProfile" name="HubOwner_Int" status="SUCCESS"/><cfg-result class="CryptoCertificate" name="partner" status="SUCCESS"/><cfg-result class="CryptoValCred" name="Partner_Sigval" status="SUCCESS"/><cfg-result class="B2BProfile" name="Partner_Ext" status="SUCCESS"/><cfg-result class="B2BXPathRoutingPolicy" name="CustomXML" status="SUCCESS"/><cfg-result class="HTTPUserAgent" name="default" status="SUCCESS"/><cfg-result class="XMLManager" name="default" status="SUCCESS"/><cfg-result class="B2BGateway" name="HubOwner" status="SUCCESS"/><cfg-result class="AS2SourceProtocolHandler" name="Partner_AS2" status="SUCCESS"/><cfg-result class="HTTPSourceProtocolHandler" name="Partner_http" status="SUCCESS"/><cfg-result class="CryptoValCred" name="HubOwner_Sigval" status="SUCCESS"/><cfg-result class="B2BProfile" name="HubOwner_Ext" status="SUCCESS"/><cfg-result class="CryptoKey" name="partner" status="SUCCESS"/><cfg-result class="CryptoIdentCred" name="Partner_Decr" status="SUCCESS"/><cfg-result class="CryptoIdentCred" name="Partner_Sig" status="SUCCESS"/><cfg-result class="B2BProfile" name="Partner_Int" status="SUCCESS"/><cfg-result class="B2BGateway" name="Partner" status="SUCCESS"/></exec-script-results></import-results></dp:import></dp:response></env:Body></env:Envelope>
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+	<env:Body>
+		<dp:response xmlns:dp="http://www.datapower.com/schemas/management">
+			<dp:timestamp>2017-08-05T06:25:14-04:00</dp:timestamp>
+			<dp:import>
+				<import-results domain="XB60-B2B-Target">
+					<export-details>
+						<description>Exported Configuration</description>
+						<user>xmi-user</user>
+						<domain>XB60-B2B-Tutorial</domain>
+						<comment />
+						<product-id>software</product-id>
+						<product>IDG</product>
+						<display-product>IDG</display-product>
+						<model>IBM DataPower Gateway</model>
+						<display-model>IBM DataPower Gateway</display-model>
+						<device-name>docker-macair-admin-services</device-name>
+						<serial-number>0000001</serial-number>
+						<firmware-version>IDG.7.5.2.4</firmware-version>
+						<display-firmware-version>IDG.7.5.2.4</display-firmware-version>
+						<firmware-build>285920</firmware-build>
+						<firmware-timestamp>2017/03/28 20:57:26</firmware-timestamp>
+						<current-date>2017-08-05</current-date>
+						<current-time>06:25:11 EDT</current-time>
+						<reset-date>2017-08-04</reset-date>
+						<reset-time>11:22:24 EDT</reset-time>
+						<login-message />
+						<custom-ui-file />
+					</export-details>
+					<imported-files>
+						<file name="cert:///hubowner-privkey.pem" src="cert/hubowner-privkey.pem"
+							status="missing-key" overwrite="on" />
+						<file name="cert:///hubowner-sscert.pem" src="cert/hubowner-sscert.pem"
+							status="missing-key" overwrite="on" />
+						<file name="cert:///partner-sscert.pem" src="cert/partner-sscert.pem"
+							status="missing-key" overwrite="on" />
+						<file name="store:///b2b-routing.xsl" src="store/b2b-routing.xsl"
+							status="same" overwrite="on" />
+						<file name="cert:///partner-privkey.pem" src="cert/partner-privkey.pem"
+							status="missing-key" overwrite="on" />
+						<file name="webgui:///clixform.xsl" src="dp-aux/clixform.xsl"
+							status="internal" overwrite="on" />
+						<file name="webgui:///SchemaUtil.xsl" src="dp-aux/SchemaUtil.xsl"
+							status="internal" overwrite="on" />
+						<file name="webgui:///management.xsl" src="dp-aux/management.xsl"
+							status="internal" overwrite="on" />
+						<file name="webgui:///map-dmz.xsl" src="dp-aux/map-dmz.xsl"
+							status="internal" overwrite="on" />
+						<file name="webgui:///drMgmt.xml" src="dp-aux/drMgmt.xml"
+							status="internal" overwrite="on" />
+						<file name="webgui:///basetypes.xml" src="dp-aux/basetypes.xml"
+							status="internal" overwrite="on" />
+					</imported-files>
+					<imported-objects>
+						<object class="AS2SourceProtocolHandler" name="HubOwner_AS2"
+							status="new" import-debug="false" overwrite="on" />
+						<object class="HTTPSourceProtocolHandler" name="HubOwner_http"
+							status="new" import-debug="false" overwrite="on" />
+						<object class="SMTPServerConnection" name="default" status="exists"
+							import-debug="false" overwrite="on" />
+						<object class="DomainSettings" name="default" status="exists"
+							import-debug="false" overwrite="on" />
+						<object class="PasswordAlias" name="datapower" status="new"
+							import-debug="false" overwrite="on" />
+						<object class="CryptoKey" name="hubowner" status="new"
+							import-debug="false" overwrite="on" />
+						<object class="CryptoCertificate" name="hubowner" status="new"
+							import-debug="false" overwrite="on" />
+						<object class="CryptoIdentCred" name="HubOwner_Decr"
+							status="new" import-debug="false" overwrite="on" />
+						<object class="CryptoIdentCred" name="HubOwner_Sig" status="new"
+							import-debug="false" overwrite="on" />
+						<object class="B2BProfile" name="HubOwner_Int" status="new"
+							import-debug="false" overwrite="on" />
+						<object class="CryptoCertificate" name="partner" status="new"
+							import-debug="false" overwrite="on" />
+						<object class="CryptoValCred" name="Partner_Sigval" status="new"
+							import-debug="false" overwrite="on" />
+						<object class="B2BProfile" name="Partner_Ext" status="new"
+							import-debug="false" overwrite="on" />
+						<object class="B2BXPathRoutingPolicy" name="CustomXML"
+							status="new" import-debug="false" overwrite="on" />
+						<object class="HTTPUserAgent" name="default" status="exists"
+							import-debug="false" overwrite="on" />
+						<object class="XMLManager" name="default" status="exists"
+							import-debug="false" overwrite="on" />
+						<object class="B2BGateway" name="HubOwner" status="new"
+							import-debug="false" overwrite="on" />
+						<object class="AS2SourceProtocolHandler" name="Partner_AS2"
+							status="new" import-debug="false" overwrite="on" />
+						<object class="HTTPSourceProtocolHandler" name="Partner_http"
+							status="new" import-debug="false" overwrite="on" />
+						<object class="CryptoValCred" name="HubOwner_Sigval"
+							status="new" import-debug="false" overwrite="on" />
+						<object class="B2BProfile" name="HubOwner_Ext" status="new"
+							import-debug="false" overwrite="on" />
+						<object class="CryptoKey" name="partner" status="new"
+							import-debug="false" overwrite="on" />
+						<object class="CryptoIdentCred" name="Partner_Decr" status="new"
+							import-debug="false" overwrite="on" />
+						<object class="CryptoIdentCred" name="Partner_Sig" status="new"
+							import-debug="false" overwrite="on" />
+						<object class="B2BProfile" name="Partner_Int" status="new"
+							import-debug="false" overwrite="on" />
+						<object class="B2BGateway" name="Partner" status="new"
+							import-debug="false" overwrite="on" />
+					</imported-objects>
+					<file-copy-log>
+						<file-result name="store:///b2b-routing.xsl" result="ignored">
+							<reason>Identical file exists</reason>
+						</file-result>
+					</file-copy-log>
+					<exec-script-results>
+						<cfg-result class="AS2SourceProtocolHandler" name="HubOwner_AS2"
+							status="SUCCESS" />
+						<cfg-result class="HTTPSourceProtocolHandler" name="HubOwner_http"
+							status="SUCCESS" />
+						<cfg-result class="SMTPServerConnection" name="default"
+							status="SUCCESS" />
+						<cfg-result class="DomainSettings" name="default"
+							status="SUCCESS" />
+						<cfg-result class="PasswordAlias" name="datapower"
+							status="SUCCESS" />
+						<cfg-result class="CryptoKey" name="hubowner" status="SUCCESS" />
+						<cfg-result class="CryptoCertificate" name="hubowner"
+							status="SUCCESS" />
+						<cfg-result class="CryptoIdentCred" name="HubOwner_Decr"
+							status="SUCCESS" />
+						<cfg-result class="CryptoIdentCred" name="HubOwner_Sig"
+							status="SUCCESS" />
+						<cfg-result class="B2BProfile" name="HubOwner_Int"
+							status="SUCCESS" />
+						<cfg-result class="CryptoCertificate" name="partner"
+							status="SUCCESS" />
+						<cfg-result class="CryptoValCred" name="Partner_Sigval"
+							status="SUCCESS" />
+						<cfg-result class="B2BProfile" name="Partner_Ext"
+							status="SUCCESS" />
+						<cfg-result class="B2BXPathRoutingPolicy" name="CustomXML"
+							status="SUCCESS" />
+						<cfg-result class="HTTPUserAgent" name="default"
+							status="SUCCESS" />
+						<cfg-result class="XMLManager" name="default" status="SUCCESS" />
+						<cfg-result class="B2BGateway" name="HubOwner" status="SUCCESS" />
+						<cfg-result class="AS2SourceProtocolHandler" name="Partner_AS2"
+							status="SUCCESS" />
+						<cfg-result class="HTTPSourceProtocolHandler" name="Partner_http"
+							status="SUCCESS" />
+						<cfg-result class="CryptoValCred" name="HubOwner_Sigval"
+							status="SUCCESS" />
+						<cfg-result class="B2BProfile" name="HubOwner_Ext"
+							status="SUCCESS" />
+						<cfg-result class="CryptoKey" name="partner" status="SUCCESS" />
+						<cfg-result class="CryptoIdentCred" name="Partner_Decr"
+							status="SUCCESS" />
+						<cfg-result class="CryptoIdentCred" name="Partner_Sig"
+							status="SUCCESS" />
+						<cfg-result class="B2BProfile" name="Partner_Int"
+							status="SUCCESS" />
+						<cfg-result class="B2BGateway" name="Partner" status="SUCCESS" />
+					</exec-script-results>
+				</import-results>
+			</dp:import>
+		</dp:response>
+	</env:Body>
+</env:Envelope>
