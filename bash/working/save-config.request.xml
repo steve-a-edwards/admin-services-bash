@@ -1,2 +1,11 @@
 <?xml version="1.0"?>
-<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:request xmlns:ns2="http://www.datapower.com/schemas/management" domain="XB60-B2B-Target"><ns2:do-action><SaveConfig/></ns2:do-action></ns2:request></S:Body></S:Envelope>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+	<S:Body>
+		<ns2:request xmlns:ns2="http://www.datapower.com/schemas/management"
+			domain="XB60-B2B-Target">
+			<ns2:do-action>
+				<SaveConfig />
+			</ns2:do-action>
+		</ns2:request>
+	</S:Body>
+</S:Envelope>
