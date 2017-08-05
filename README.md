@@ -13,5 +13,4 @@ XSL files used by the above bash.
 Sample DataPower CLI scripts to demonstrate transferring files (e.g. keys and certs),
 from an external server to a DataPower domain.
 
-Author: Steve Edwards, IBM DataPower Specialist
-Date  : 2017-08-05
+Author: Steve Edwards, IBM DataPower Specialist (2017-08-05)
