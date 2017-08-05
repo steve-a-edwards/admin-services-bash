@@ -8,7 +8,7 @@ export project_location=/Users/steve/Applications/eclipse/workspace-sse/admin-se
 # ************ - 2: import these to target domain / DataPower
 # ************ - 3: updating the PasswordAlias object passwords on the target domain / DataPower
 # ************ - 4: saving the new configuration on the target domain / DataPower
-# ************ - 5: saving the new configuration on the target domain / DataPower
+# ************ - 5: resetting the target domain / DataPower
 
 # ************ Author: Steve Edwards, IBM DataPower Specialist
 # ************ Date  : 2017-08-05
