@@ -2,9 +2,10 @@
 <env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
 	<env:Body>
 		<dp:response xmlns:dp="http://www.datapower.com/schemas/management">
-			<dp:timestamp>2017-08-05T06:25:21-04:00</dp:timestamp>
-			<dp:result>OK</dp:result>
-			<dp:result>OK</dp:result>
+			<dp:timestamp>2017-08-06T05:32:56-04:00</dp:timestamp>
+			<dp:result>
+				OK
+			</dp:result>
 		</dp:response>
 	</env:Body>
 </env:Envelope>

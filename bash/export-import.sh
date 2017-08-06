@@ -32,7 +32,11 @@ export x_param_target_domain="$(xmllint --xpath 'string(/admin-services-settings
 export x_param_source_soma_host="$(xmllint --xpath 'string(/admin-services-settings/B2B-Synchronization/source-datapower/@soma_host_port)' $settings_file)"
 export x_param_target_soma_host="$(xmllint --xpath 'string(/admin-services-settings/B2B-Synchronization/target-datapower/@soma_host_port)' $settings_file)"
 
-echo "****************** $x_param_source_domain"
+echo "****************** Ensure any relevant key, certificate files are in the target domain, DataPower"
+echo "****************** Source domain: $x_param_source_domain"
+echo "****************** Source host  : $x_param_source_soma_host"
+echo "****************** Target domain: $x_param_target_domain"
+echo "****************** Target host  : $x_param_target_soma_host"
 
 export working=$project_location/bash/working
 echo "******** Working folder for temporary files produced by this script: $working"
@@ -54,13 +58,12 @@ export x_param_object_name=
 export xsltproc_switch=--timing	   # provides less output!
 
 # ======== Following is an XSL template that will produce an XMI request for export
-export xmi_export_template=$xsl/do-export_template.xsl
+export xmi_export_template=$xsl/DoExport_template.xsl
 export null_xml=$xsl/null.xml
-export xmi_export_request=$working/$x_param_object_class.export.request.xml
+export xmi_export_request=$working/01_DoExport_$x_param_object_class.request.xml
 
 # ======== Produce an XMI request for export
-xsltproc $xsltproc_switch\
- $xmi_export_template $null_xml\
+xsltproc $xmi_export_template $null_xml\
  -stringparam x_param_source_domain $x_param_source_domain\
  -stringparam x_param_object_class $x_param_object_class\
  -stringparam x_param_object_name $x_param_object_name\
@@ -69,7 +72,7 @@ xsltproc $xsltproc_switch\
 echo "******** Produced xmi_export_request file: $xmi_export_request"
 
 # ======== 1: Call XMI for export from source DataPower and domain
-export xmi_export_response=$working/$x_param_object_class.export.response.xml
+export xmi_export_response=$results/01_DoExport_$x_param_object_class.response.xml
 echo xmi_export_response
 
 curl -d @$xmi_export_request\
@@ -80,8 +83,8 @@ curl -d @$xmi_export_request\
 echo "******** Received xmi_export_response to file: $xmi_export_response"
 
 # ======== Produce an XMI request for import
-export xmi_import_request=$working/$x_param_object_class.import.request.xml
-export export_import=$xsl/export-import.xsl
+export xmi_import_request=$working/02_DoImport_$x_param_object_class.request.xml
+export export_import=$xsl/Export_To_Import.xsl
 
 xsltproc $xsltproc_switch\
  -stringparam x_param_target_domain $x_param_target_domain \
@@ -90,7 +93,7 @@ xsltproc $xsltproc_switch\
 echo "******** Produced xmi_import_requestfile: $xmi_import_request"
 
 # ======== 2: Call XMI to import to target DataPower and domain
-export xmi_import_response=$results/$x_param_object_class.import.response.xml
+export xmi_import_response=$results/02_DoImport_$x_param_object_class.response.xml
 
 curl -d @$xmi_import_request\
  https://$x_param_target_soma_host/service/mgmt/current\
@@ -100,9 +103,9 @@ curl -d @$xmi_import_request\
 echo "******** Received xmi_import_response to file: $xmi_import_response"
 
 # ========  Create readable import results file to HTML
-export tabulate_file=$xsl/tabulate-import-results.xsl
+export tabulate_file=$xsl/Tabulate_Import_Results.xsl
 
-export html_file=$results/$x_param_object_class.import.response.html
+export html_file=$results/02_DoImport_$x_param_object_class.response.html
 
 xsltproc $xsltproc_switch\
  -stringparam x_param_target_soma_host $x_param_target_soma_host\
@@ -112,8 +115,8 @@ xsltproc $xsltproc_switch\
 echo "******** Produced readable form of import results in file: $html_file"
  
 # ======== Produce an XMI request for setting PasswordAliases
- export xmi_password_aliases_request=$working/password_aliases.import.request.xml
- export set_config_file=$xsl/set-config-PasswordAliases_template.xsl
+ export xmi_password_aliases_request=$working/03_SetConfig_PasswordAliases.request.xml
+ export set_config_file=$xsl/SetConfig_PasswordAliases_template.xsl
  
  xsltproc $xsltproc_switch\
  -stringparam x_param_target_domain $x_param_target_domain \
@@ -122,7 +125,7 @@ echo "******** Produced readable form of import results in file: $html_file"
  echo "******** Produced xmi_password_aliases_request file: $xmi_password_aliases_request"
  
  # ======== 3: Call XMI to set PasswordAlias config on target DataPower and domain
-export xmi_password_aliases_response=$results/password_aliases.import.response.xml
+export xmi_password_aliases_response=$results/03_SetConfig_PasswordAliases.response.xml
 
 curl -d @$xmi_password_aliases_request\
  https://$x_param_target_soma_host/service/mgmt/current\
@@ -132,8 +135,8 @@ curl -d @$xmi_password_aliases_request\
 echo "******** Received xmi_password_aliases_response to file: $xmi_password_aliases_response"
 
 # ======== Produce an XMI request for saving configuration of target domain
- export xmi_save_config_request=$working/save-config.request.xml
- export save_config_file=$xsl/do-action-SaveConfig_template.xsl
+ export xmi_save_config_request=$working/04_SaveConfig.request.xml
+ export save_config_file=$xsl/DoAction_SaveConfig_template.xsl
  
  xsltproc $xsltproc_switch\
  -stringparam x_param_target_domain $x_param_target_domain \
@@ -142,7 +145,7 @@ echo "******** Received xmi_password_aliases_response to file: $xmi_password_ali
  echo "******** Produced xmi_save_config_request file: $xmi_save_config_request"
  
  # ======== 4: Call XMI to save config on target DataPower and domain
-export xmi_save_config_response=$results/save_config.response.xml
+export xmi_save_config_response=$results/04_SaveConfig.response.xml
 
 curl -d @$xmi_save_config_request\
  https://$x_param_target_soma_host/service/mgmt/current\
@@ -152,8 +155,8 @@ curl -d @$xmi_save_config_request\
 echo "******** Received xmi_save_config_response to file: $xmi_save_config_response"
 
 # ======== Produce an XMI request for resetting target domain
-export xmi_reset_domain_request=$working/reset.domain.request.xml
-export reset_domain_file=$xsl/do-action-RestartDomain_template.xsl
+export xmi_reset_domain_request=$working/05_RestartDomainRequest.request.xml
+export reset_domain_file=$xsl/DoAction_RestartDomain_template.xsl
  
  xsltproc $xsltproc_switch\
  -stringparam x_param_target_domain $x_param_target_domain \
@@ -162,7 +165,7 @@ export reset_domain_file=$xsl/do-action-RestartDomain_template.xsl
  echo "******** Produced xmi_reset_domain_request file: $xmi_reset_domain_request"
  
 # ======== 5: Call XMI to reset domain on target DataPower
-export xmi_reset_domain_response=$results/reset.domain.response.xml
+export xmi_reset_domain_response=$results/05_RestartDomainRequest.response.xml
 
 curl -d @$xmi_reset_domain_request\
  https://$x_param_target_soma_host/service/mgmt/amp/3.0\

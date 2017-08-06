@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<S:Envelope xmlns:dp="http://www.datapower.com/schemas/management"
+	xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+	<S:Body>
+		<ns2:request xmlns:ns2="http://www.datapower.com/schemas/management"
+			domain="XB60-B2B-Target">
+			<ns2:do-import source-type="ZIP" overwrite-files="true" overwrite-objects="true">
+				<ns2:input-file>UEsDBAoAAAAAABgsBks *** REMOVED BASE64 SECTIONS *** cAwAAXpoKAAAA</ns2:input-file>
+			</ns2:do-import>
+		</ns2:request>
+	</S:Body>
+</S:Envelope>
